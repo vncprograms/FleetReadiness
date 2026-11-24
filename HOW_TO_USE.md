@@ -103,3 +103,5 @@ The first load reads the saved table and the models. Give it a few seconds. If t
 source .venv/bin/activate
 streamlit run dashboard/app.py
 ```
+
+[Contents](#contents) · [Instruction manual](docs/manual.md)
