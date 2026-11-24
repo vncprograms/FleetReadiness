@@ -113,6 +113,22 @@ Two extra rules can raise the note. The check engines missed by about **16 runs*
 
 The sliders change the 50 and the 20. They do not retrain the model.
 
+## Using it with other things
+
+The app takes one row per engine run and writes a note: keep watching, plan an inspection, or inspect this one first. Something else either hands it those rows, or takes the note.
+
+**Other engine files.** FD002, FD003, and FD004 are the same kind of NASA runs. Some have more than one operating condition, and two of them add a second kind of damage. The same screens can replay those after the models are taught on them. The FD001 guesses are for FD001.
+
+**A shop schedule.** The High note is the handoff. A calendar or a work-order list can turn “engine 34, about 4 runs left, inspect soon” into a date, a bay, and a person. This app stops at the sentence.
+
+**Parts and cost.** A parts list can check whether the pieces are on the shelf. A cost sheet can compare an early inspection with the cost of the engine stopping in use. This app does not know prices or stock.
+
+**A message when the note changes.** Mail or a chat channel can send the same sentence when an engine moves to High, or when the unusual-reading flag turns on.
+
+**Another machine that wears in runs.** Pumps, gearboxes, and smaller turbines fit the same shape when each run is one row, the rows stay in order, and the teaching machines have a known failure run. The sensors would be that machine’s sensors. The 50 and the 20 would be chosen again.
+
+**A test stand.** A stand that saves a row after each run can feed the same replay. The stand keeps recording. The app guesses from the rows it has already been given. Today those teaching rows are the NASA simulation.
+
 ## Run it
 
 Python 3.12. On macOS, XGBoost needs `brew install libomp`.
