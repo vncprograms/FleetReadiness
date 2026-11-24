@@ -1,0 +1,66 @@
+{
+  "note": "Mean absolute SHAP value on a sample of training cycles. Model influence, not a physical cause.",
+  "sample_size": 200,
+  "features": [
+    {
+      "feature": "time_cycles",
+      "mean_abs_shap": 32.052032470703125
+    },
+    {
+      "feature": "sensor_15_roll_mean_10",
+      "mean_abs_shap": 5.089483261108398
+    },
+    {
+      "feature": "sensor_14_roll_mean_10",
+      "mean_abs_shap": 5.042024612426758
+    },
+    {
+      "feature": "sensor_4_roll_mean_10",
+      "mean_abs_shap": 4.572243690490723
+    },
+    {
+      "feature": "sensor_21_roll_mean_10",
+      "mean_abs_shap": 3.8102288246154785
+    },
+    {
+      "feature": "sensor_11_roll_mean_5",
+      "mean_abs_shap": 3.7415990829467773
+    },
+    {
+      "feature": "sensor_9_roll_mean_10",
+      "mean_abs_shap": 3.0119338035583496
+    },
+    {
+      "feature": "sensor_3_roll_mean_10",
+      "mean_abs_shap": 2.57148814201355
+    },
+    {
+      "feature": "sensor_4_roll_mean_5",
+      "mean_abs_shap": 2.4671010971069336
+    },
+    {
+      "feature": "sensor_8_roll_mean_10",
+      "mean_abs_shap": 2.364997148513794
+    },
+    {
+      "feature": "sensor_6_roll_std_10",
+      "mean_abs_shap": 2.2929465770721436
+    },
+    {
+      "feature": "sensor_12_roll_mean_10",
+      "mean_abs_shap": 2.1182100772857666
+    },
+    {
+      "feature": "sensor_15_roll_mean_5",
+      "mean_abs_shap": 1.9270662069320679
+    },
+    {
+      "feature": "sensor_13_roll_mean_10",
+      "mean_abs_shap": 1.8903449773788452
+    },
+    {
+      "feature": "sensor_9_roll_mean_5",
+      "mean_abs_shap": 1.6439411640167236
+    }
+  ]
+}

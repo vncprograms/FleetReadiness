@@ -1,0 +1,73 @@
+{
+  "model": "isolation_forest",
+  "contamination": 0.02,
+  "trained_on": "split == train",
+  "score_definition": "anomaly_score = -decision_function; higher is more unusual",
+  "limitation": "No NASA fault labels are available for these checks. Scenario C is synthetic.",
+  "scenario_a_normal": {
+    "description": "Unmodified validation cycles with recorded RUL above 100.",
+    "n": 1832,
+    "fraction_anomalous": 0.008187772925764192,
+    "mean_anomaly_score": -0.11181004008896953
+  },
+  "scenario_b_degrading": {
+    "description": "One unmodified validation engine, replayed from the first cycle through the recorded end.",
+    "source_file": "train_FD001",
+    "unit_number": 3,
+    "correlation_anomaly_score_vs_cycle": 0.4847665816427476,
+    "mean_score_first_20_cycles": -0.10619246972458721,
+    "mean_score_last_20_cycles": -0.00951785683348336,
+    "fraction_anomalous": 0.055865921787709494,
+    "note": "This is an observed score path. The dataset has no anomaly labels for these cycles."
+  },
+  "scenario_c_synthetic": {
+    "label": "Synthetic injections on a copy of one validation engine. Not real aircraft faults.",
+    "source_file": "train_FD001",
+    "unit_number": 3,
+    "cycle": 125,
+    "cases": [
+      {
+        "name": "temperature_increase",
+        "sensor": "sensor_4",
+        "kind": "step",
+        "magnitude": 85.86041946510129,
+        "score_before": -0.11659821928542558,
+        "score_after": -0.09059068969720213,
+        "label_after": "normal",
+        "identified": false
+      },
+      {
+        "name": "pressure_deviation",
+        "sensor": "sensor_11",
+        "kind": "step",
+        "magnitude": 2.4173177256487697,
+        "score_before": -0.11659821928542558,
+        "score_after": -0.0911024129454267,
+        "label_after": "normal",
+        "identified": false
+      },
+      {
+        "name": "measurement_spike",
+        "sensor": "sensor_2",
+        "kind": "spike",
+        "magnitude": 4.728635704999731,
+        "score_before": -0.11659821928542558,
+        "score_after": -0.1010904483341678,
+        "label_after": "normal",
+        "identified": false
+      },
+      {
+        "name": "measurement_fluctuation",
+        "sensor": "sensor_7",
+        "kind": "fluctuation",
+        "magnitude": 7.319297957654658,
+        "score_before": -0.11659821928542558,
+        "score_after": -0.09588315565536926,
+        "label_after": "normal",
+        "identified": false
+      }
+    ],
+    "n_identified": 0,
+    "n_cases": 4
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "subset": "FD001",
+  "selection_rule": "Lowest RMSE on validation engines at the cycle where true RUL is 30. Official test engines were not used to choose the model.",
+  "selected_model": "xgboost",
+  "saved_model": "rul_model.pkl",
+  "hyperparameters": {
+    "ridge": {
+      "alpha": 1.0
+    },
+    "random_forest": {
+      "n_estimators": 200,
+      "max_depth": 20,
+      "min_samples_leaf": 2
+    },
+    "xgboost": {
+      "n_estimators": 300,
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8
+    }
+  },
+  "validation": {
+    "ridge": {
+      "at_rul_30": {
+        "n": 20,
+        "mae": 26.079360295058837,
+        "rmse": 31.849604337586907,
+        "mean_error": 25.57305453047482,
+        "n_late": 17,
+        "n_early": 3,
+        "n_negative_predictions": 0,
+        "nasa_score": 1113.0573500996643,
+        "nasa_score_per_engine": 55.65286750498321
+      },
+      "all_cycles": {
+        "n": 3852,
+        "mae": 26.69820954940991,
+        "rmse": 33.26355165432039,
+        "mean_error": 15.80692219356046,
+        "n_late": 2724,
+        "n_early": 1128,
+        "n_negative_predictions": 156,
+        "nasa_score": 469568.4808492449,
+        "nasa_score_per_engine": 121.90251320073855
+      }
+    },
+    "random_forest": {
+      "at_rul_30": {
+        "n": 20,
+        "mae": 10.550358796745076,
+        "rmse": 16.072212381990838,
+        "mean_error": 7.628104222067793,
+        "n_late": 12,
+        "n_early": 8,
+        "n_negative_predictions": 0,
+        "nasa_score": 131.08892210381345,
+        "nasa_score_per_engine": 6.554446105190673
+      },
+      "all_cycles": {
+        "n": 3852,
+        "mae": 21.017361292944933,
+        "rmse": 29.06417921460752,
+        "mean_error": 10.73459573800829,
+        "n_late": 2416,
+        "n_early": 1436,
+        "n_negative_predictions": 0,
+        "nasa_score": 1470870.9872232103,
+        "nasa_score_per_engine": 381.84605068099955
+      }
+    },
+    "xgboost": {
+      "at_rul_30": {
+        "n": 20,
+        "mae": 10.812792587280274,
+        "rmse": 15.9504844806958,
+        "mean_error": 5.164371109008789,
+        "n_late": 9,
+        "n_early": 11,
+        "n_negative_predictions": 0,
+        "nasa_score": 144.83862518106082,
+        "nasa_score_per_engine": 7.241931259053041
+      },
+      "all_cycles": {
+        "n": 3852,
+        "mae": 21.061568334779913,
+        "rmse": 28.683328606218264,
+        "mean_error": 9.262193207076807,
+        "n_late": 2324,
+        "n_early": 1528,
+        "n_negative_predictions": 7,
+        "nasa_score": 513496.50773569755,
+        "nasa_score_per_engine": 133.3064661826837
+      }
+    }
+  },
+  "test_last_cycle": {
+    "model": "xgboost",
+    "n": 100,
+    "mae": 21.76981705188751,
+    "rmse": 30.964673374263047,
+    "mean_error": 12.698086466789245,
+    "n_late": 65,
+    "n_early": 35,
+    "n_negative_predictions": 0,
+    "nasa_score": 921535.116814054,
+    "nasa_score_per_engine": 9215.35116814054
+  },
+  "capped_rul_experiment": {
+    "cap": 125,
+    "note": "Training labels were clipped at 125 cycles. Metrics below compare those models with the uncapped true RUL on the validation engines. This experiment was not eligible for model selection.",
+    "validation": {
+      "random_forest": {
+        "at_rul_30": {
+          "n": 20,
+          "mae": 10.72331968594223,
+          "rmse": 16.140744863388033,
+          "mean_error": 7.176566997664023,
+          "n_late": 10,
+          "n_early": 10,
+          "n_negative_predictions": 0,
+          "nasa_score": 134.4111680326103,
+          "nasa_score_per_engine": 6.720558401630515
+        },
+        "all_cycles": {
+          "n": 3852,
+          "mae": 23.805155651363286,
+          "rmse": 33.72569570700012,
+          "mean_error": -11.612129269521423,
+          "n_late": 1524,
+          "n_early": 2328,
+          "n_negative_predictions": 0,
+          "nasa_score": 964103.6688328999,
+          "nasa_score_per_engine": 250.2865183886033
+        }
+      },
+      "xgboost": {
+        "at_rul_30": {
+          "n": 20,
+          "mae": 9.793512153625489,
+          "rmse": 15.425091745542243,
+          "mean_error": 5.7289268493652346,
+          "n_late": 13,
+          "n_early": 7,
+          "n_negative_predictions": 0,
+          "nasa_score": 163.44673716862437,
+          "nasa_score_per_engine": 8.172336858431219
+        },
+        "all_cycles": {
+          "n": 3852,
+          "mae": 23.88662830754986,
+          "rmse": 33.811525212292864,
+          "mean_error": -12.330881184979312,
+          "n_late": 1463,
+          "n_early": 2389,
+          "n_negative_predictions": 8,
+          "nasa_score": 891852.163128113,
+          "nasa_score_per_engine": 231.5296373645153
+        }
+      }
+    }
+  },
+  "top_influences": {
+    "ridge": [
+      {
+        "feature": "time_cycles",
+        "value": 24.81062428656925,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_13_roll_mean_10",
+        "value": 22.693114321827608,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_8_roll_mean_10",
+        "value": 21.346849111402705,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_11_roll_mean_5",
+        "value": 12.937121627569667,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_9_roll_mean_10",
+        "value": 12.636494190950511,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_12_roll_mean_5",
+        "value": 10.828339493647485,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_8_roll_mean_5",
+        "value": 10.695575086443434,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_12_roll_mean_10",
+        "value": 10.639564631717894,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_13_roll_mean_5",
+        "value": 10.160245676012712,
+        "kind": "absolute_coefficient"
+      },
+      {
+        "feature": "sensor_7_roll_mean_5",
+        "value": 9.022995420738482,
+        "kind": "absolute_coefficient"
+      }
+    ],
+    "random_forest": [
+      {
+        "feature": "time_cycles",
+        "value": 0.48351677235112306,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_15_roll_mean_10",
+        "value": 0.11234681899686352,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_4_roll_mean_10",
+        "value": 0.057739022993477405,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_14_roll_mean_10",
+        "value": 0.030565563115683654,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_11_roll_mean_5",
+        "value": 0.020366454348028504,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_9_roll_mean_10",
+        "value": 0.019768387448418773,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_12_roll_mean_10",
+        "value": 0.019241472356974133,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_21_roll_mean_10",
+        "value": 0.018410738234185774,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_11_roll_mean_10",
+        "value": 0.015918774613094468,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_2_roll_mean_10",
+        "value": 0.012736286777602782,
+        "kind": "impurity_importance"
+      }
+    ],
+    "xgboost": [
+      {
+        "feature": "time_cycles",
+        "value": 0.1465754359960556,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_15_roll_mean_10",
+        "value": 0.10672060400247574,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_4_roll_mean_10",
+        "value": 0.08917885273694992,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_11_roll_mean_5",
+        "value": 0.05915330350399017,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_21_roll_mean_10",
+        "value": 0.033271674066782,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_3_roll_mean_10",
+        "value": 0.02905854769051075,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_4_roll_mean_5",
+        "value": 0.026618704199790955,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_15_roll_mean_5",
+        "value": 0.026343675330281258,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_21_roll_mean_5",
+        "value": 0.02499171905219555,
+        "kind": "impurity_importance"
+      },
+      {
+        "feature": "sensor_12_roll_mean_10",
+        "value": 0.01949702575802803,
+        "kind": "impurity_importance"
+      }
+    ]
+  },
+  "influence_note": "Ridge values are absolute coefficients on standardized features. Tree values are impurity importances. Neither is a physical cause."
+}
