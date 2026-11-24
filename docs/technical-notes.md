@@ -1,6 +1,6 @@
 # Technical notes
 
-The short guide is the [README](../README.md). The click-through is [How to use FleetReadiness](../HOW_TO_USE.md). This file keeps the dataset source, the column notes, and the exact model numbers.
+The short guide is the [README](../README.md). The chapter list is the [instruction manual](manual.md). The click-through is [How to use FleetReadiness](../HOW_TO_USE.md). This file keeps the dataset source, the column notes, and the exact model numbers.
 
 ## Setup notes
 

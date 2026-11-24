@@ -2,6 +2,19 @@
 
 Open the app, press Start, then press Advance. Each click plays the next saved run of one engine. The guess and the note update from the runs you have played.
 
+## Contents
+
+- [Open the app](#open-the-app)
+- [The five pages](#the-five-pages)
+- [Walk one engine](#walk-one-engine)
+- [The buttons](#the-buttons)
+- [The other pages](#the-other-pages)
+- [If the page is empty](#if-the-page-is-empty)
+
+Words used on the screen are defined in the manual: [a cycle](docs/manual.md#what-a-cycle-is), [an anomaly score](docs/manual.md#anomaly-scores), and [the maintenance note](docs/manual.md#the-maintenance-note).
+
+## Open the app
+
 You need the app running first:
 
 ```bash
