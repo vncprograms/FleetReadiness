@@ -76,9 +76,13 @@ The model leans on how many runs have already happened. On 200 teaching runs, th
 
 ## Unusual readings
 
-A second model only saw the 80 teaching engines. Nobody labeled the faults for it. It learned what a usual teaching run looks like.
+Each run gets an anomaly score. The score says how unusual that run looks next to the 80 teaching engines. A higher number is more unusual. The alarm line is **0**.
 
-A higher score is more unusual. The alarm line is **0**. A negative score is still called normal.
+The model was not given a list of faults. It only saw the teaching runs, in the same 93 numbers the life model uses. About 2% of those teaching runs were set aside as the unusual tail, and that is what placed the line at 0.
+
+A usual run scores below 0. Early check runs sit around **−0.11**. The last runs of a wearing engine climb to about **−0.01**, still just under the line, so they stay labeled normal. The alarm turns on only when the score goes above 0. On the fleet page, none of the 100 test engines are above 0 at their last saved run.
+
+One run is 93 numbers at once. Changing a single sensor, even by a lot, often leaves the rest of the pattern looking like the teaching engines. The score can move toward 0 without crossing it.
 
 | Check | What was replayed | Result |
 |---|---|---|
